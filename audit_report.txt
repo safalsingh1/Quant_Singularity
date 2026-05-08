@@ -1,0 +1,46 @@
+====================================================================
+QUANT SINGULARITY — DATA AUDIT REPORT
+====================================================================
+
+Total instruction rows            : 300
+Valid JSON                        : 300
+Bad JSON                          : 0
+
+CONVICTION FIELD — PRIMARY FINDING
+----------------------------------------
+Numeric conviction (valid)        : 255  (rows 1–47, 93–300)
+String conviction (correctable)   : 6  (e.g. '0.8 (high)' -> 0.8)
+String conviction (uncorrectable) : 39  (e.g. 'high','moderate','low')
+
+ROOT CAUSE: Rows ~48–92 originated from a different pipeline that
+serialised conviction as human text instead of float. These rows
+would teach the model to violate the output schema. Conviction is
+not a softmax probability — it is a model-generated float that must
+be parseable by the orchestrator. We EXCLUDE uncorrectable rows and
+PATCH correctable rows (extract leading float, validate range).
+
+OTHER FINDINGS
+----------------------------------------
+atm_iv clamped to 10.0 floor      : 37 rows — legitimate NSE floor, kept
+Duplicate signal_ids              : 0 (in 0 groups)
+
+CLEAN DATASET
+----------------------------------------
+Originally clean rows             : 255
+Patched (corrected conviction)    : 6
+Excluded (uncorrectable)          : 39
+Total rows in clean file          : 261
+Output                            : C:\Users\darkp\Desktop\quant_singularity\slm_intern_data\finetune_instructions_clean.jsonl
+
+MARKET STATES PARQUET
+----------------------------------------
+Rows                              : 780
+ADX range                         : 10.00–34.75
+VIX range                         : 12.67–30.95
+VIX mean=17.47 std=4.83  3σ=31.94
+ADX<20 rows (orchestrator would suppress): 78
+Label distribution                : {'NEUTRAL': 316, 'PE': 239, 'CE': 225}
+
+====================================================================
+END OF REPORT
+====================================================================

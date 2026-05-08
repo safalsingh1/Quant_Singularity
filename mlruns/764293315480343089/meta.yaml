@@ -1,0 +1,8 @@
+artifact_location: file:///kaggle/working/mlruns/764293315480343089
+creation_time: 1778230474620
+experiment_id: '764293315480343089'
+last_update_time: 1778230474620
+lifecycle_stage: active
+name: quant-singularity-signal-pod
+trace_location: null
+workspace: default

@@ -1,0 +1,27 @@
+{
+  "no_rag_accuracy": 0.2949,
+  "rag_accuracy": 0.3742,
+  "delta_accuracy": 0.0793,
+  "no_rag_ci": [
+    0.247,
+    0.3477
+  ],
+  "rag_ci": [
+    0.3222,
+    0.4293
+  ],
+  "no_rag_mean_conviction": 0.8535,
+  "rag_mean_conviction": 0.9344,
+  "delta_conviction": 0.081,
+  "interpretation": "RAG HELPS \u2014 +0.0793 accuracy gain from context",
+  "no_rag_pred_dist": {
+    "CE": 234,
+    "PE": 78,
+    "NEUTRAL": 78
+  },
+  "rag_pred_dist": {
+    "CE": 95,
+    "PE": 106,
+    "NEUTRAL": 189
+  }
+}

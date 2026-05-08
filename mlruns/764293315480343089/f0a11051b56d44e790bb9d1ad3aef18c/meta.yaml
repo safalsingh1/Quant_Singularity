@@ -1,0 +1,14 @@
+artifact_uri: file:///kaggle/working/mlruns/764293315480343089/f0a11051b56d44e790bb9d1ad3aef18c/artifacts
+end_time: 1778230581599
+entry_point_name: ''
+experiment_id: '764293315480343089'
+lifecycle_stage: active
+run_id: f0a11051b56d44e790bb9d1ad3aef18c
+run_name: kaggle_t4_r8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1778230494066
+status: 3
+tags: []
+user_id: root
